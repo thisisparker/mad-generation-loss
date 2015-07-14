@@ -1,22 +1,8 @@
 #!/usr/bin/ruby
 
-tracklength = `mp3info -p %S ginsberg-howl.mp3`.to_i
-splittimes = []
-
-# Sets the times at which mp3splt will split the mp3.
-
-i=0
-while i < tracklength
-	iminutes = i/60
-	iseconds = i%60
-	splittimes.push "#{sprintf '%02d', iminutes}.#{sprintf '%02d', iseconds}"
-	i += 1
-end
-splittimes.push "EOF"
-
 # Here's the split.
 
-`mp3splt -d out/ ginsberg-howl.mp3 #{splittimes.join " "}`
+`mp3splt -t 0.1 -d out/ ginsberg-howl.mp3`
 
 # Creates an array of the mp3s that mp3splt just made
 
