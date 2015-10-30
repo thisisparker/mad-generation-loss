@@ -7,6 +7,7 @@
 # Creates an array of the mp3s that mp3splt just made
 
 filearray = Dir.glob("out/*.mp3")
+filearray.sort!
 
 # Goes through each of the files in the array transcoding as many times as its index.
 
