@@ -16,7 +16,7 @@ filearray.each_with_index do
 	puts "processing #{entry}"
 	`mv #{entry} temp.mp3`
 	index.times do
-		`lame --silent -b 64 temp.mp3 temp_processed.mp3 2> /dev/null` #LAME sometimes throws errors that can't be silenced about how hip can't step back certain values. This shuts that up.
+		`lame --silent -b 64 --cbr --resample 44.1 temp.mp3 temp_processed.mp3 2> /dev/null` #LAME sometimes throws errors that can't be silenced about how hip can't step back certain values. This shuts that up.
 		`rm temp.mp3`
 		`mv temp_processed.mp3 temp.mp3`
 	end
