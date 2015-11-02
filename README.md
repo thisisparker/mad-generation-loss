@@ -13,4 +13,6 @@ If you'd like to run the script yourself, you'll need to have `mp3info`, `mp3spl
 
 For reference, this 3:18 clip requires encoding about 20,000 mp3s.
 
+The `sh` version of the script requires only `bash`, `sox`, and `lame`.  It will only go through 210 mp3 encodings for a 3:30 clip.  An example of its output can be found at [moloch-generation-loss.mp3](http://kmkeen.com/tmp/moloch-generation-loss.mp3)
+
 More information available on my [blog post describing the project](http://parkerhiggins.net/2015/10/mad-generation-loss/).
